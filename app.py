@@ -11,8 +11,8 @@ model = models.load_model("cats_dogs.keras")
 def predict(img):
     ## Charger l'image
     image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    image = cv2.resize(image, (64, 64)) # Correction d'une petite typo ici (img -> image)
-    image = np.expand_dims(image, axis=0)
+    image = cv2.resize(image, (64, 64)) 
+    image = np.expand_dims(image, axis=0)##model attend des données de type(batch,64,64,canal)
     ## normaliser
     image = image / 255.0
 
